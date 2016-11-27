@@ -19,6 +19,12 @@ values(93, 'Iza Matusiak',
 (select telefon from klienci where idklienta = 94)
 );
 
+--other way
+insert into klienci
+select 93, 'Matusiak Iza', ulica, miejscowosc, kod, telefon
+from klienci
+where idklienta=94;
+
 insert into czekoladki values('X91', 'Biaaaaaly Kiel',
 null, null, null, 'rozplywajace sie w rekach i kieszeniach',
 0.45, 0);
