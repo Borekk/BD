@@ -30,3 +30,10 @@ from siatkarki s, druzyny d
 where
 s.numer = p.numer and s.iddruzyny = p.iddruzyny and p.iddruzyny = d.iddruzyny and
  d.iddruzyny like 'pila' and s.numer = 4 and idmeczu = 21;
+
+
+--or
+update punktujace p set punkty = 112
+from siatkarki s natural join druzyny d
+where s.numer = p.numer and
+p.iddruzyny = s.iddruzyny and d.iddruzyny like 'pila' and p.idmeczu = 21 and p.numer = 4;
