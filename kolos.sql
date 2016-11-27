@@ -11,8 +11,8 @@ where p.idmeczu in (
 
 --other way
 SELECT DISTINCT s.imie, s.nazwisko, d.miasto, m.termin, p.punkty
-FROM punktujace p JOIN siatkarki s ON p.iddruzyny=s.iddruzyny AND p.numer=p.numer JOIN mecze m ON p.idmeczu=m.idmeczu JOIN druzyny d ON s.iddruzyny=d.iddruzyny
+FROM punktujace p JOIN siatkarki s ON p.iddruzyny=s.iddruzyny AND p.numer=s.numer JOIN mecze m ON p.idmeczu=m.idmeczu JOIN druzyny d ON s.iddruzyny=d.iddruzyny
 WHERE p.idmeczu IN (
 					SELECT DISTINCT m.idmeczu
-					FROM punktujace p JOIN siatkarki s ON p.iddruzyny=s.iddruzyny AND p.numer=p.numer JOIN mecze m ON p.idmeczu=m.idmeczu JOIN druzyny d ON s.iddruzyny=d.iddruzyny
+					FROM punktujace p JOIN siatkarki s ON p.iddruzyny=s.iddruzyny AND p.numer=s.numer JOIN mecze m ON p.idmeczu=m.idmeczu JOIN druzyny d ON s.iddruzyny=d.iddruzyny
 WHERE date_part('month', m.termin)=10 AND date_part('year', m.termin)=2009 AND s.numer=4 AND d.miasto='Piła');
