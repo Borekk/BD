@@ -3,8 +3,10 @@
 \setcounter{secnumdepth}{4}
 \usepackage{fix-cm}
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+\usepackage{polski}
+\usepackage[polski]{babel}
 \usepackage{enumerate}
+\usepackage{graphicx}
 
 \addto\captionsenglish{% Replace "english" with the language you use
 	\renewcommand{\contentsname}%
@@ -14,9 +16,12 @@
 	\begin{titlepage}
 		\center 
 		\Large Inżynieria Oprogramowania\\[0.5cm]
-		\large Informatyka EAIiE\\
-		\large Rok akademicki 2016/2017\\[5cm]
-		\fontsize{40}{8}\selectfont Projekt obsługi systemu kwiaciarni\\[7.5cm]
+		\large Informatyka EAIiIB\\
+		\large Rok akademicki 2016/2017\\[0.1cm]
+		\begin{center}
+            \includegraphics{logo.jpg}
+        \end{center}
+		\fontsize{40}{8}\selectfont Projekt obsługi systemu kwiaciarni\\[6.5cm]
 		\begin{minipage}{1.1\textwidth}
 			\begin{flushright} \Large
 				\emph{Autorzy:}\\
@@ -29,14 +34,14 @@
 	\tableofcontents
 	\newpage
 	\section{Streszczenie systemu}
-	 Projektowany system opisuje działanie kwiaciarni. Oprócz kwiatów, bukietów i roślin w skład oferty wchodzą między innymi: donice, artykuły ozdobne czy środki pielegnujące dla roślin. \\	
+	 Projektowany system opisuje działanie kwiaciarni. \\	
 	Klient wybiera interesujący go produkt z dostępnego spisu (dostępnego zarówno w lokalu jak i na stronie internetowej). System umowżliwia standardową sprzedaż artykułów w lokalu oraz dodatkowo obsługuje składanie zamówień przez stronę WWW oraz telefon. 
 	Gotowe zamówienia są dostarczane pod wskazany adres lub odbierane w kwiaciarni, zgodnie z życzeniem klienta. \\ Łącznie dostępne są trzy sposoby płatności: gotówką, kartą i przelewem internetowym. Zamówienia składane przez telefon/stronę WWW zaczynają być realizowane dopiero po otrzymaniu płatności. Przy każdej transakcji klient orzymuje paragon bądź fakturę.
 	System przyznaje klientom, którzy dokonali przynajmniej 10 zamówień kartę stałego klienta, dzięki której klient otrzymuje 10 \% zniżki na kolejne zamówienia.
 	\\
 	Klienci kwiaciarni mogę ocenić jakość oferowanych usług za pomocą ankiet dostępnych w lokalu i na stronie internetowej. Strona internetowa jest jednym z elementów promocyjnych firmy, przede wszystkim jednak promocja kwiaciarni organizowana jest przez zewnętrzną firmę.
 	\newpage
-	\section{Lista aktorów}
+	\section{Lista obiektów zewnętrznych}
 	\begin{itemize}
 		\setlength\itemsep{1em}
 		\item \textbf{\large{Klient}}\\
@@ -44,17 +49,15 @@
 		\item \textbf{\large{Sprzedawca}}\\
 		Osoba sprzedająca produkty i przyjmująca zamówienia. 
 		\item \textbf{\large{Florysta}}\\
-		Osoba układająca bukiety i wiązanki, pilnująca stanu zaopatrzenia .
+		Osoba układająca bukiety i wiązanki, pilnująca stanu zaopatrzenia.
 		\item \textbf{\large{Kierownik}}\\
 		Zarządza pracownikami, zamawia towar w hurtowni, wybiera kampanię reklamową, otrzymuje wyniki badań poziomu satysfakcji.
 		\item \textbf{\large{Dostawca}}\\
 		Realizuje dowóz do klienta.
 		\item \textbf{\large{Hurtownia}}\\
 		Dostawca kwiatów, roślin, artykułów florystycznych itd.
-		\item \textbf{\large{Strona WWW}}\\
-		Umożliwia składanie zamówień, przeglądanie oferty, wypełnienie ankiety badającej poziom satysfakcji. 
 		\item \textbf{\large{Agencja reklamowa}}\\
-		Zajmuje się reklamą kwiaciarni oraz przeprowadzaniem ankiet na temat oferowanych usług.
+		Zajmuje się reklamą kwiaciarni oraz przeprowadzaniem ankiet na temat oferowanych usług, dodatkowo obsługuje stronę WWW.
 	\end{itemize}
 	\newpage
 	
@@ -69,12 +72,12 @@
             \item Za pośrednictwem strony WWW
         \end{enumerate}
         \item Przyjęcie zamówienia
-        \item Wybór sposobu potwierdzenia płatności
+        \item Potwierdzenia płatności
         \begin{enumerate}
-            \item Faktura
+            \item Faktura VAT
             \item Paragon
         \end{enumerate}
-        \item Wybór sposobu płatności
+        \item Żądanie płatności
         \begin{enumerate}
             \item Gotówką
             \item Kartą
@@ -87,10 +90,11 @@
             \item Przez dowóz do klienta
         \end{enumerate}
         \item Zamówienie towaru z hurtowni
-        \item Przeprowadzenie badania zadowolenia klienta (ankiety)
+        \item Przeprowadzenie ankiety
     \end{enumerate}
 
     \newpage
 	\section{Diagram kontekstowy}
+	\includegraphics[width = 1\textwidth]{diag2.png}
 \end{document}
 
